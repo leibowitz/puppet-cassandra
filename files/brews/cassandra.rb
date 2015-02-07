@@ -4,7 +4,7 @@ class Cassandra < Formula
   homepage 'http://cassandra.apache.org'
   url 'http://archive.apache.org/dist/cassandra/1.2.9/apache-cassandra-1.2.9-bin.tar.gz'
   version '1.2.9-boxen1'
-  sha1 'f6a5738200b281ef098e90be3fa30cf2'
+  sha1 '217b3731784899f0228ea6f5bf98c9821e7f750e'
 
   def install
     (etc+"cassandra").mkpath
