@@ -14,11 +14,11 @@ class Cassandra < Formula
     inreplace "conf/cassandra-env.sh", "/lib/", "/"
 
     inreplace "bin/cassandra.in.sh" do |s|
-      s.gsub! "CASSANDRA_HOME=\"`dirname $0`/..\"", "CASSANDRA_HOME=\"#{prefix}\""
+      s.gsub! 'CASSANDRA_HOME="`dirname $0`/.."', 'CASSANDRA_HOME="#{prefix}"'
       # Store configs in etc, outside of keg
-      s.gsub! "CASSANDRA_CONF=\"$CASSANDRA_HOME/conf\"", "CASSANDRA_CONF=\"#{etc}/cassandra\""
+      s.gsub! 'CASSANDRA_CONF="$CASSANDRA_HOME/conf"', "CASSANDRA_CONF="#{etc}/cassandra"'
       # Jars installed to prefix, no longer in a lib folder
-      s.gsub! "\"$CASSANDRA_HOME\"/lib/*.jar", "\"$CASSANDRA_HOME\"/*.jar"
+      s.gsub! '"$CASSANDRA_HOME"/lib/*.jar', '"$CASSANDRA_HOME"/*.jar'
     end
 
     rm Dir["bin/*.bat"]
